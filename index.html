@@ -17,18 +17,19 @@
   	<link rel="stylesheet" href="https://arcode-project.github.io/css/style.min.css">
   </head>
   <body>
-    <div class="nav">
-      <ul>
-        <li><a href="https://arcode-project.github.io/">Home</a></li>
-        
-          <li><a href="/about/">About</a></li>
-        
-          <li><a href="/charts/">Charts</a></li>
-        
-          <li><a href="/images/">Images</a></li>
-        
-      </ul>
+    <div class="navbar">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <div class="dropdown">
+        <button class="dropbtn">Evaluation
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="/charts">Distortion Curves</a>
+          <a href="/images">In-game Images</a>
+        </div>
       </div>
+    </div>
     </div>
   </body>
 </html>
@@ -44,7 +45,7 @@
   <body>
     <header>
       <div class="showcase">
-        <h1>IN THIS WEBSITE YOU CAN FIND THE INFORMATION ABOUT OUR PROJECT</h1>
+        <h1>ARCODE</h1>
         <p>Action-aware combat model for massively multiplayer online role-playing games runnign on cloud gaming platforms.</p>
         <a href="/about" class="button">Read More</a>
       </div>
