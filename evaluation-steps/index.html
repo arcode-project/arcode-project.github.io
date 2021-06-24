@@ -46,9 +46,14 @@
   </head>
   <body>
     <div class="container">
-      <h1>ARCODE</h1>
+      <h1>Evaluation Steps</h1>
         <div>
-          <p align="justify">ARCODE is an action-aware combat model proposed for massively multiplayer online role-playing games (MMORPGs) running on cloud gaming platforms to improve the compression efficiency of graphics rendering cloud servers and provide players a better visual quality with the same bitrate compared to the traditional approach. Because video compression removes spatiotemporal redundancies, fewer bits are required to encode, at a certain fidelity, the videos with less motion. Arcode is aware of game semantics and captures different action data for different object types in the combat area of MMORPGs, and based on the actions each object can perform in each game state to alter the state of other objects, the model considers the importance of the object. Based on the significance of each object to the player in each game state, the model adjusts the frequency of each object's position updates in the scene. By reducing the number of motion updates in the scene, the cloud server's encoder consumes fewer bits to encode the video at a certain fidelity compared to the traditional approach.</p>
+          <ol>
+            <li>The videos are available <a href="https://drive.google.com/drive/folders/1An4EfK8SmXeU8d-oevu9weXx8S01AOLO?usp=sharing" target="_blank">here</a>. Each destination folder contains two videos: the original video and the reconstructed one.</li>
+            <li><a href="https://www.ffmpeg.org/" target="_blank">FFmpeg</a> can be used to convert the video files to raw YUV video: <span style="color:#406A96;">ffmpeg -i input -c:v rawvideo -pix_fmt yuv420p output.yuv</span>.</li>
+            <li><a href="https://www.ffmpeg.org/" target="_blank">FFmpeg</a> further is used to extract the raw YUV frames: <span style="color:#406A96;">ffmpeg -f rawvideo -framerate 60 -s 1920x1080 -pixel_format yuv420p -i input.yuv -c copy -f segment -segment_time 0.01 frames%d.yuv</span>.</li>
+            <li>The original and reconstructed videos are not perfectly aligned. We wrote a <a href="https://drive.google.com/drive/folders/1F9HrHMjdPa4P6qUcrXTe-gKQJvf4xZ0U?usp=sharing">code</a> that aligns the reconstructed video frames with respect to those of the original one and calculates the PSNR.</li>
+          </ol>
         </div>
     </div>
   </body>
